@@ -2,12 +2,12 @@
 
 namespace Exercicios_Modelagem1
 {
-    class scientificCalculator : HouseholdObjects
+    public class scientificCalculator : HouseholdObjects
     {
         private double lastResult;
         private DateTime inicializationDate;
 
-        public scientificCalculator( DateTime inicializationDate)
+        public scientificCalculator( DateTime inicializationDate )
         {
             this.inicializationDate = inicializationDate;
         }
@@ -69,12 +69,12 @@ namespace Exercicios_Modelagem1
             }
             else return 0;
         }
+        
         public override void showDescription()
         {
             Console.WriteLine("\nTipo: Calculadora Científica");
             base.showDescription();
             Console.WriteLine("Acionada em: {0}\nTempo restante de bateria: {1:dd} dias", inicializationDate, batteryRemaining());
-
         }
     }
 }

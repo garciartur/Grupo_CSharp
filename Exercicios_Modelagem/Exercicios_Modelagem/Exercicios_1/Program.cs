@@ -2,7 +2,7 @@
 
 namespace Exercicios_Modelagem1
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -40,6 +40,19 @@ namespace Exercicios_Modelagem1
             Console.WriteLine("-- Operação com calculadora ligada: " + calculadora.toAdd(5, -2) + " --");
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
             Console.ReadLine();
+
+            /*
+            //Video Game propriedades
+            videoGame vGame = new videoGame(32);
+            vGame.weight = 289;
+            vGame.height = 23,9;
+            vGame.length = 10;
+            vGame.width = 5,4;
+            vGame.color = "Azul";
+            vGame.brand = "Nintendo";
+            vGame.model = "Switch Portátil";
+            vGame.showDescription();
+            */
         }
     }
 }
