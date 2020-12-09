@@ -1,7 +1,0 @@
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\bin\Debug\Exercicios_Modelagem1.exe.config
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\bin\Debug\Exercicios_Modelagem1.exe
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\bin\Debug\Exercicios_Modelagem1.pdb
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\obj\Debug\Exercicios_Modelagem1.csprojAssemblyReference.cache
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\obj\Debug\Exercicios_Modelagem1.csproj.CoreCompileInputs.cache
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\obj\Debug\Exercicios_Modelagem1.exe
-C:\Users\tarep\Documents\GRUPO CSHARP\EXERCICIOS\Exercicios_Modelagem1\Exercicios_Modelagem1\obj\Debug\Exercicios_Modelagem1.pdb
