@@ -47,6 +47,7 @@ public class videoGame : HouseholdObjects
                 gameQty--;
                 Console.WriteLine("\nGame desinstalado com sucesso!");
             }
+            else Console.WriteLine("\nGame não encontrado!");
         }
     }
 
