@@ -25,7 +25,7 @@ namespace Exercicios_Modelagem
 
         public void installGame(string gameTitle, double gameSize)
         {
-            if (gameSize > memoryRemaining) Console.WriteLine("\nMemória insuficiente!");
+            if (gameSize > memoryRemaining) Console.WriteLine("\nMemória insuficiente para instalar {0}! ({1} GB de memória restante)", gameTitle, memoryRemaining);
             else
             {
                 Game game = new Game();
@@ -34,7 +34,7 @@ namespace Exercicios_Modelagem
                 gameList.Add(game);
                 updateMemory(game.gameSize, true);
                 gameQty++;
-                Console.WriteLine("\nGame instalado com sucesso!");
+                Console.WriteLine("\n{0} instalado com sucesso! ({1} GB de memória restante)", gameTitle, memoryRemaining);
             }
         }
 
@@ -48,11 +48,11 @@ namespace Exercicios_Modelagem
                     updateMemory(gameList[item].gameSize, false);
                     gameList.Remove(gameList[item]);
                     gameQty--;
-                    Console.WriteLine("\nGame desinstalado com sucesso!");
+                    Console.WriteLine("\n{0} desinstalado com sucesso! ({1} GB de memória restante)", gameTitle, memoryRemaining);
                     gameOccurance = true;
                 }
             }
-            if( !gameOccurance ) Console.WriteLine("\nGame não encontrado!");
+            if( !gameOccurance ) Console.WriteLine("\n{0}não encontrado!", gameTitle);
         }
 
         public void playGame(string gameTitle)
@@ -62,11 +62,11 @@ namespace Exercicios_Modelagem
             {
                 if (game.gameTitle == gameTitle)
                 {
-                    Console.WriteLine("\nCarregando...");
+                    Console.WriteLine("\nAguarde! {0} está carregando...", gameTitle);
                     gameOccurance = true;
                 }
             }
-            if( !gameOccurance ) Console.WriteLine("\nGame não encontrado!");
+            if( !gameOccurance ) Console.WriteLine("\n{0} não encontrado!", gameTitle);
         }
 
         public void showGameList()
@@ -74,7 +74,7 @@ namespace Exercicios_Modelagem
             Console.WriteLine("\n-- Lista de games instalados --");
             foreach (Game game in gameList)
             {
-                Console.WriteLine("Título: {0}\tTamanho: {1}GB", game.gameTitle, game.gameSize);
+                Console.WriteLine("Título: {0}\nTamanho: {1} GB\n", game.gameTitle, game.gameSize);
             }
         }
 
@@ -82,7 +82,7 @@ namespace Exercicios_Modelagem
         {
             Console.WriteLine("\nTipo: Video Game");
             base.showDescription();
-            Console.WriteLine("Memória total do console: {0}GB\nMemória restante: {1}GB\nQuantidade de jogos instalados: {2} jogos", consoleMemory, memoryRemaining, gameQty);
+            Console.WriteLine("Memória total do console: {0} GB\nMemória restante: {1} GB\nQuantidade de jogos instalados: {2} jogos", consoleMemory, memoryRemaining, gameQty);
         }
     }
 }

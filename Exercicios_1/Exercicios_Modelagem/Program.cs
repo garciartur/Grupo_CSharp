@@ -6,8 +6,9 @@ namespace Exercicios_Modelagem
     {
         static void Main(string[] args)
         {
-            //Despertador propriedades
-            /*AlarmClock despertador = new AlarmClock();
+            //TESTE DESPERTADOR
+            /*
+             AlarmClock despertador = new AlarmClock();
             despertador.weight = 40.5;
             despertador.height = 5.3;
             despertador.length = 10;
@@ -25,7 +26,8 @@ namespace Exercicios_Modelagem
             despertador.cancelAlarm();
             Console.WriteLine("-- O alarme está acionado? " + despertador.active + " --");
 
-            //Calculadora propriedades
+            //TESTE CALCULADORA
+            /*
             ScientificCalculator calculadora = new ScientificCalculator(DateTime.Now.AddYears(-3));
             calculadora.weight = 20.3;
             calculadora.height = 15.2;
@@ -40,9 +42,10 @@ namespace Exercicios_Modelagem
             Console.WriteLine("-- Operação com calculadora ligada: " + calculadora.toAdd(5, -2) + " --");
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
             */
-                      
-
-            //Video Game propriedades
+            
+            
+            //TESTE VIDEO GAME
+            /*
             VideoGame vGame = new VideoGame(32);
             vGame.weight = 289;
             vGame.height = 23.9;
@@ -51,13 +54,22 @@ namespace Exercicios_Modelagem
             vGame.color = "Azul";
             vGame.brand = "Nintendo";
             vGame.model = "Switch Lite";
-            vGame.installGame("Cuphead", 0.18);
+            vGame.installGame("Cuphead", 1.18);
             vGame.installGame("Pokémon Sword", 4);
+            vGame.installGame("Hades", 2.72);
             vGame.uninstallGame("Pokémon Sword");
             //vGame.uninstallGame("Pokémon Sword");
+            vGame.installGame("Animal Crossing: New Horizons", 5.8);
+            vGame.installGame("The Legend of Zelda: Breath of the Wild", 40);
+            vGame.playGame("Pokémon Sword");
+            vGame.playGame("The Legend of Zelda: Breath of the Wild");
             vGame.playGame("Cuphead");
-            //vGame.showDescription();
+            vGame.showDescription();
+            vGame.showGameList();
             Console.ReadLine();
+            */
+
+
         }
     }
 }
