@@ -8,7 +8,7 @@ namespace Exercicios_Modelagem
         {
             //TESTE DESPERTADOR
             /*
-             AlarmClock despertador = new AlarmClock();
+            AlarmClock despertador = new AlarmClock();
             despertador.weight = 40.5;
             despertador.height = 5.3;
             despertador.length = 10;
@@ -25,6 +25,7 @@ namespace Exercicios_Modelagem
             Console.WriteLine("-- O alarme está acionado? " + despertador.active + " --");
             despertador.cancelAlarm();
             Console.WriteLine("-- O alarme está acionado? " + despertador.active + " --");
+            */
 
             //TESTE CALCULADORA
             /*
@@ -43,6 +44,7 @@ namespace Exercicios_Modelagem
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
             */
 
+
             //TESTE VIDEO GAME
             /*
             VideoGame vGame = new VideoGame(32);
@@ -53,6 +55,7 @@ namespace Exercicios_Modelagem
             vGame.color = "Azul";
             vGame.brand = "Nintendo";
             vGame.model = "Switch Lite";
+            vGame.showDescription();
             vGame.installGame("Cuphead", 1.18);
             vGame.installGame("Pokémon Sword", 4);
             vGame.installGame("Hades", 2.72);
@@ -87,7 +90,9 @@ namespace Exercicios_Modelagem
             Console.ReadLine();
             */
 
+
             //TESTE COFRE DIGITAL
+            /*
             DigitalSafeBox cofre = new DigitalSafeBox("123456");
             cofre.weight = 1120;
             cofre.height = 25;
@@ -118,6 +123,7 @@ namespace Exercicios_Modelagem
             cofre.toUnlockSafeBox("123451", "123451");
             cofre.showDescription();
             Console.ReadLine();
+            */
         }
     }
 }

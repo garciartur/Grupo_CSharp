@@ -4,8 +4,8 @@ namespace Exercicios_Modelagem
 {
     public class ScientificCalculator : HouseholdObjects
     {
-        private double lastResult;
-        private DateTime inicializationDate;
+        private double lastResult { get; set; }
+        private DateTime inicializationDate { get; set; }
 
         public ScientificCalculator(DateTime inicializationDate)
         {

@@ -5,14 +5,14 @@ namespace Exercicios_Modelagem
 	public class AlarmClock : HouseholdObjects
 	{
 		//Toque do alarme
-		public String ringSound;
+		public String ringSound { get; set; }
 		//Volume do alarme
-		public int ringVolume;
-		public int ringInterval;
-		public int snoozeInterval;
-		public bool snoozeActive;
-		public DateTime alarmDayHour;
-		public String alarmName;
+		public int ringVolume { get; set; }
+		public int ringInterval { get; set; }
+		public int snoozeInterval { get; set; }
+		public bool snoozeActive { get; set; }
+		public DateTime alarmDayHour { get; set; }
+		public String alarmName { get; set; }
 
 		public void setAlarm(DateTime alarmDayHour, String alarmName)
 		{
