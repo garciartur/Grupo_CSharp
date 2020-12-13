@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmClock.cs" />
+    <Compile Include="DigitalSafeBox.cs" />
     <Compile Include="PowerDrill.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="VideoGame.cs" />

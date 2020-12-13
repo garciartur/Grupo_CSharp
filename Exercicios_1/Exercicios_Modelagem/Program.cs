@@ -43,7 +43,6 @@ namespace Exercicios_Modelagem
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
             */
 
-
             //TESTE VIDEO GAME
             /*
             VideoGame vGame = new VideoGame(32);
@@ -87,6 +86,38 @@ namespace Exercicios_Modelagem
             furadeira.showDescription();
             Console.ReadLine();
             */
+
+            //TESTE COFRE DIGITAL
+            DigitalSafeBox cofre = new DigitalSafeBox("123456");
+            cofre.weight = 1120;
+            cofre.height = 25;
+            cofre.length = 25;
+            cofre.width = 35;
+            cofre.color = "Preto";
+            cofre.brand = "Safewell";
+            cofre.model = "25EK";
+            cofre.showDescription();
+
+            cofre.toUnlockSafeBox("123458", "123457");
+            cofre.toLockSafeBox();
+            cofre.toUnlockSafeBox("123458", "123457");
+            cofre.toUnlockSafeBox("123458", "123458");
+            cofre.toUnlockSafeBox("123459", "123459");
+            cofre.toUpdatePassword("123451");
+            cofre.toUnlockSafeBox("123456", "123456");
+            cofre.toUpdatePassword("123451");
+            cofre.showDescription();
+
+            cofre.toUnlockSafeBox("123455", "123455");
+            cofre.toLockSafeBox();
+            cofre.toUnlockSafeBox("123457", "123457");
+            cofre.toUnlockSafeBox("123456", "123456");
+            cofre.toUnlockSafeBox("123459", "123459");
+            cofre.toUnlockSafeBox("123458", "123458");
+            cofre.toUpdatePassword("123452");
+            cofre.toUnlockSafeBox("123451", "123451");
+            cofre.showDescription();
+            Console.ReadLine();
         }
     }
 }
