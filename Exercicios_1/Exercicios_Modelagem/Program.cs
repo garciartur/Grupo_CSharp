@@ -42,8 +42,8 @@ namespace Exercicios_Modelagem
             Console.WriteLine("-- Operação com calculadora ligada: " + calculadora.toAdd(5, -2) + " --");
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
             */
-            
-            
+
+
             //TESTE VIDEO GAME
             /*
             VideoGame vGame = new VideoGame(32);
@@ -58,7 +58,6 @@ namespace Exercicios_Modelagem
             vGame.installGame("Pokémon Sword", 4);
             vGame.installGame("Hades", 2.72);
             vGame.uninstallGame("Pokémon Sword");
-            //vGame.uninstallGame("Pokémon Sword");
             vGame.installGame("Animal Crossing: New Horizons", 5.8);
             vGame.installGame("The Legend of Zelda: Breath of the Wild", 40);
             vGame.playGame("Pokémon Sword");
@@ -69,7 +68,25 @@ namespace Exercicios_Modelagem
             Console.ReadLine();
             */
 
-
+            //TESTE FURADEIRA
+            /*
+            PowerDrill furadeira = new PowerDrill(600, 220);
+            furadeira.weight = 10.9;
+            furadeira.height = 95;
+            furadeira.length = 120;
+            furadeira.width = 80;
+            furadeira.color = "Azul";
+            furadeira.brand = "Bosch";
+            furadeira.model = "GBH 5-40";
+            furadeira.changeTool("LiXa");
+            furadeira.changeTool("Chave Phillips");
+            furadeira.toScrew("aço");
+            furadeira.toScrew("alvenaria");
+            furadeira.changeTool("broca");
+            furadeira.toDrill("alvenaria");
+            furadeira.showDescription();
+            Console.ReadLine();
+            */
         }
     }
 }

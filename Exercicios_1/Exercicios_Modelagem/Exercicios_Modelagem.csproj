@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlarmClock.cs" />
+    <Compile Include="PowerDrill.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="VideoGame.cs" />
     <Compile Include="ScientificCalculator.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

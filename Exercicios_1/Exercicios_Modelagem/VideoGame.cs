@@ -5,10 +5,10 @@ namespace Exercicios_Modelagem
 {
     public class VideoGame : HouseholdObjects
     {
-        private double consoleMemory;
-        private double memoryRemaining;
+        private double consoleMemory { get; set; }
+        private double memoryRemaining { get; set; }
         private List<Game> gameList = new List<Game>();
-        private int gameQty;
+        private int gameQty { get; set; }
 
         public VideoGame(double consoleMemory)
         {
