@@ -124,6 +124,20 @@ namespace Exercicios_Modelagem
             cofre.showDescription();
             Console.ReadLine();
             */
+
+            DigitalSafeBox cofre = new DigitalSafeBox("123451");
+            cofre.weight = 1120;
+            cofre.height = 25;
+            cofre.length = 25;
+            cofre.width = 35;
+            cofre.color = "Preto";
+            cofre.brand = "Safewell";
+            cofre.model = "25EK";
+            cofre.toUpdatePassword("205010");
+            cofre.toLockSafeBox();
+            cofre.toUnlockSafeBox("205010", "205010");
+            cofre.showDescription();
+            Console.ReadLine();
         }
     }
 }
