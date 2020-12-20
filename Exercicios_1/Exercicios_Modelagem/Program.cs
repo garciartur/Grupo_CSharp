@@ -29,7 +29,7 @@ namespace Exercicios_Modelagem
 
             //TESTE CALCULADORA
             /*
-            ScientificCalculator calculadora = new ScientificCalculator(DateTime.Now.AddYears(-3));
+            ScientificCalculator calculadora = new ScientificCalculator(DateTime.Now.AddYears(-5));
             calculadora.weight = 20.3;
             calculadora.height = 15.2;
             calculadora.length = 7.6;
@@ -42,8 +42,8 @@ namespace Exercicios_Modelagem
             calculadora.turnOn();
             Console.WriteLine("-- Operação com calculadora ligada: " + calculadora.toAdd(5, -2) + " --");
             Console.WriteLine("-- Operação usando último resultado: " + calculadora.toAdd(calculadora.getLastResult(), 2) + " --");
+            Console.ReadLine();
             */
-
 
             //TESTE VIDEO GAME
             /*
@@ -124,20 +124,6 @@ namespace Exercicios_Modelagem
             cofre.showDescription();
             Console.ReadLine();
             */
-
-            DigitalSafeBox cofre = new DigitalSafeBox("123451");
-            cofre.weight = 1120;
-            cofre.height = 25;
-            cofre.length = 25;
-            cofre.width = 35;
-            cofre.color = "Preto";
-            cofre.brand = "Safewell";
-            cofre.model = "25EK";
-            cofre.toUpdatePassword("205010");
-            cofre.toLockSafeBox();
-            cofre.toUnlockSafeBox("205010", "205010");
-            cofre.showDescription();
-            Console.ReadLine();
         }
     }
 }

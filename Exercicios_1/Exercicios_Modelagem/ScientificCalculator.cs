@@ -12,7 +12,7 @@ namespace Exercicios_Modelagem
             this.inicializationDate = inicializationDate;
         }
 
-        public void setLastResult(double lastResult)
+        private void setLastResult(double lastResult)
         {
             this.lastResult = lastResult;
         }
@@ -25,7 +25,7 @@ namespace Exercicios_Modelagem
         public TimeSpan batteryRemaining()
         {
             //Duração da bateria de 5 anos
-            TimeSpan batteryLife = new TimeSpan(1825, 0, 0, 0);
+            TimeSpan batteryLife = new TimeSpan(1827, 0, 0, 0);
             TimeSpan batteryUsed = DateTime.Now - inicializationDate;
             return batteryLife - batteryUsed;
         }
