@@ -80,6 +80,7 @@ namespace Exercicios_Modelagem
             furadeira.color = "Azul";
             furadeira.brand = "Bosch";
             furadeira.model = "GBH 5-40";
+            Console.WriteLine(furadeira.drillTool);
             furadeira.changeTool("LiXa");
             furadeira.changeTool("Chave Phillips");
             furadeira.toScrew("aço");
@@ -89,6 +90,7 @@ namespace Exercicios_Modelagem
             furadeira.showDescription();
             Console.ReadLine();
             */
+            
 
 
             //TESTE COFRE DIGITAL

@@ -1,6 +1,7 @@
 using Exercicios_Modelagem;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace UnitTest_Exercicios_1
 {
@@ -216,6 +217,386 @@ namespace UnitTest_Exercicios_1
 
             //Arrange
             Assert.AreEqual(expectedRet, ret);
+        }
+    }
+
+    [TestClass]
+    public class UnitTest_VideoGame
+    {
+        //É necesspario testar também para valor negativo?
+        [TestMethod]
+        public void TestUpdateMemory_WhenConsumeMemoryIsTrue_ShouldReturnExpectedRet()
+        {
+            //Arrange
+            var videogameTest = new VideoGame(1);
+            double expectedRet = 0;
+
+            //Act
+            videogameTest.updateMemory(1, true);
+            double ret = videogameTest.memoryRemaining;
+
+            //Arrange
+            Assert.AreEqual(expectedRet, ret);
+        }
+
+        [TestMethod]
+        public void TestInstallGame_WhenGameSizeIsLessThanMemoryRemaining_ShouldReturnExpectedRet()
+        {
+            //Arrange
+            var videogameTest = new VideoGame(2);
+            double expectedRet = 1;
+
+            //Act
+            videogameTest.installGame("ret", 1);
+            int ret = videogameTest.gameQty;
+
+            //Arrange
+            Assert.AreEqual(expectedRet, ret);
+        }
+
+        [TestMethod]
+        public void TestUninstallGame_WhenGameSizeIsLessThanMemoryRemaining_ShouldReturnExpectedRet()
+        {
+            //Arrange
+            var videogameTest = new VideoGame(2);
+            double expectedRet = 0;
+            videogameTest.installGame("ret", 1);
+
+            //Act
+            videogameTest.uninstallGame("ret");
+            int ret = videogameTest.gameQty;
+
+            //Arrange
+            Assert.AreEqual(expectedRet, ret);
+        }
+
+        [TestMethod]
+        public void TestPlayGame_WhenPlayGameRet_ShouldReturnTrue()
+        {
+            //Arrange
+            var videogameTest = new VideoGame(2);
+            videogameTest.installGame("ret", 1);
+
+            //Act
+            bool ret = videogameTest.playGame("ret");
+
+            //Arrange
+            Assert.IsTrue(ret);
+        }
+        //Como testar métodos que só exibem informações?
+    }
+
+    [TestClass]
+    public class UnitTest_PowerDrill
+    {
+        [TestMethod]
+        public void TestChangeTool_WhenDrillToolIsDefault_ShouldReturnZero()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string defaultValue = "ret";
+            int expectedRet = 0;
+
+            //Act
+            powerDrillTest.changeTool(defaultValue);
+            var ret = powerDrillTest.drillTool;
+
+            //Arrange
+            Assert.AreEqual(expectedRet, ret);
+        }
+
+        [TestMethod]
+        public void TestSetMaterialType_WhenDrillToolIsDefault_ShouldReturnZero()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string defaultValue = "ret";
+            int expectedRet = 0;
+
+            //Act            
+            double ret = powerDrillTest.setMaterialType(defaultValue);
+
+            //Arrange
+            Assert.AreEqual(expectedRet, ret);
+        }
+
+        [TestMethod]
+        public void TestToScrew_WhenDrillToolIsDefault_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string defaultValue = "ret";
+
+            //Act            
+            bool ret = powerDrillTest.toScrew(defaultValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToScrew_WhenDrillWattageIsLessThanWattage_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string screwValue = "chave phillips";
+
+            //Act            
+            bool ret = powerDrillTest.toScrew(screwValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToDrill_WhenDrillToolIsDefault_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string defaultValue = "ret";
+
+            //Act            
+            bool ret = powerDrillTest.toDrill(defaultValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToDrill_WhenDrillWattageIsLessThanWattage_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string drillValue = "broca";
+
+            //Act            
+            bool ret = powerDrillTest.toDrill(drillValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToSand_WhenDrillToolIsDefault_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string defaultValue = "ret";
+
+            //Act            
+            bool ret = powerDrillTest.toSand(defaultValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToSand_WhenDrillWattageIsLessThanWattage_ShouldReturnFalse()
+        {
+            //Arrange
+            var powerDrillTest = new PowerDrill(1, 1);
+            string sandValue = "lixa";
+
+            //Act            
+            bool ret = powerDrillTest.toSand(sandValue);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+    }
+
+    [TestClass]
+    public class UnitTest_DigitalSafeBox
+    {
+        [TestMethod]
+        public void TestToConfirmPassword_WhenSafePasswordAndPasswordConfirmationAreNotEquals_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            string passwordConfirmation = "1";
+
+            //Act            
+            bool ret = safeBoxTest.toConfirmPassword(safePassword, passwordConfirmation);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToValidatePassword_WhenSafePasswordIsWrong_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            string wrongPassword = "1";
+
+            //Act            
+            bool ret = safeBoxTest.toValidatePassword(wrongPassword);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUpdateRejection_WhenNewRejectionIsTrueAndPasswordRejectionLessThanThree_ShouldReturnTrue()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+
+            //Act            
+            bool ret = safeBoxTest.toUpdateRejection(true);
+
+            //Arrange
+            Assert.IsTrue(ret);
+        }
+
+        [TestMethod]
+        public void TestToUpdateRejection_WhenNewRejectionIsTrueAndPasswordRejectionMoreThanThree_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            for(int i = 0; i <3; i++) safeBoxTest.toUpdateRejection(true);
+
+            //Act            
+            bool ret = safeBoxTest.toUpdateRejection(true);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUpdateRejection_WhenNewRejectionIsFalse_PasswordRejectionShouldReturnZero()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            var expectedValue = 0;
+            for (int i = 0; i < 3; i++) safeBoxTest.toUpdateRejection(true);
+            safeBoxTest.toUpdateRejection(false);
+
+            //Act            
+            int ret = safeBoxTest.passwordRejection;
+
+            //Arrange
+            Assert.AreEqual(expectedValue, ret);
+        }
+
+        [TestMethod]
+        //O método foi chamado indiretamente e não aparece como testado :(
+        public void TestToSetSafeBlocked_ShouldReturnTrue()
+        {
+            //Arrange
+            string safePassword = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            for (int i = 0; i <= 3; i++) safeBoxTest.toUpdateRejection(true);
+
+            //Act            
+            bool ret = safeBoxTest.getSafeBlocked();
+
+            //Arrange
+            Assert.IsTrue(ret);
+        }
+
+        [TestMethod]
+        public void TestToUnlockSafeBox_WhenSafeLockedIsFalse_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string passwordConfirmation = "0";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+
+            //Act            
+            bool ret = safeBoxTest.toUnlockSafeBox(safePassword, passwordConfirmation);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUnlockSafeBox_WhenSafePasswordAndPasswordConfirmationAreNotEquals_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string passwordConfirmation = "1";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            safeBoxTest.toLockSafeBox();
+
+            //Act            
+            bool ret = safeBoxTest.toUnlockSafeBox(safePassword, passwordConfirmation);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUnlockSafeBox_WhenSafeBlockedIsTrue_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string passwordConfirmation = "0";
+                    //Bloqueando o cofre
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            safeBoxTest.toLockSafeBox();
+            for (int i = 0; i <= 3; i++) safeBoxTest.toUpdateRejection(true);
+
+            //Act            
+            bool ret = safeBoxTest.toUnlockSafeBox(safePassword, passwordConfirmation);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUnlockSafeBox_WhenSafePasswordIsWrong_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string passwordConfirmation = "1";
+            string wrongPassword = "1";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            safeBoxTest.toLockSafeBox();
+
+            //Act            
+            bool ret = safeBoxTest.toUnlockSafeBox(wrongPassword, passwordConfirmation);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUpdateSafePassword_WhenSafeLockedIsTrueAndSafeBlockedIsFalse_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string newPassword = "1";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            safeBoxTest.toLockSafeBox();
+
+            //Act            
+            bool ret = safeBoxTest.toUpdatePassword(newPassword);
+
+            //Arrange
+            Assert.IsFalse(ret);
+        }
+
+        [TestMethod]
+        public void TestToUpdateSafePassword_WhenSafeLockedIsTrueAndSafeBlockedIsTrue_ShouldReturnFalse()
+        {
+            //Arrange
+            string safePassword = "0";
+            string newPassword = "1";
+            var safeBoxTest = new DigitalSafeBox(safePassword);
+            safeBoxTest.toLockSafeBox();
+            for (int i = 0; i <= 3; i++) safeBoxTest.toUpdateRejection(true);
+
+            //Act            
+            bool ret = safeBoxTest.toUpdatePassword(newPassword);
+
+            //Arrange
+            Assert.IsFalse(ret);
         }
     }
 }

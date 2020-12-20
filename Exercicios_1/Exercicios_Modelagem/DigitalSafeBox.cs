@@ -2,13 +2,13 @@
 
 namespace Exercicios_Modelagem
 {
-    class DigitalSafeBox : HouseholdObjects
+    public class DigitalSafeBox : HouseholdObjects
     {
         private string safePassword { set; get; }
         private DateTime lastPasswordUpdate { set; get; }
         private bool safeLocked { set; get; }
         private bool safeBlocked { set; get; }
-        private int passwordRejection { set; get; }
+        public int passwordRejection { private set; get; }
 
         public DigitalSafeBox( string safePassword )
         {
@@ -35,7 +35,7 @@ namespace Exercicios_Modelagem
             return safeBlocked;
         }
 
-        public void setSafeBlocked()
+        private void setSafeBlocked()
         {
             safeBlocked = true;
         }
@@ -62,7 +62,7 @@ namespace Exercicios_Modelagem
             }
         }
 
-        public void toUnlockSafeBox( string safePassword, string passwordConfirmation )
+        public bool toUnlockSafeBox( string safePassword, string passwordConfirmation )
         {
             if( safeLocked )
             {
@@ -74,19 +74,20 @@ namespace Exercicios_Modelagem
                         {
                             safeLocked = false;
                             toUpdateRejection(false);
-                            Console.WriteLine("Senha correta!\nCofre aberto!\n");
+                            Console.WriteLine("Senha correta!\nCofre aberto!\n"); return true;
                         }
                         else
                         {
                             Console.WriteLine(toUpdateRejection(true) ? "Senha recusada!\nVocê usou " + passwordRejection + " de 3 tentativas antes de bloquear o cofre...\n" : "Senha recusada!\nCofre bloqueado!\n");
+                            return false;
                         }
                     }
-                    else Console.WriteLine("Cofre bloqueado!\n");
-
+                    else Console.WriteLine("Cofre bloqueado!\n"); return false;
                 }
-                else Console.WriteLine("Senhas incompatíveis!\n");
+                else Console.WriteLine("Senhas incompatíveis!\n"); return false;
             }
-            else Console.WriteLine("O cofre já está aberto!\n");
+            else Console.WriteLine("O cofre já está aberto!\n"); return false;
+
         }
 
         public void toLockSafeBox()
@@ -95,15 +96,17 @@ namespace Exercicios_Modelagem
             Console.WriteLine("Cofre fechado!\n");
         }
 
-        public void toUpdatePassword( string newPassword )
+        public bool toUpdatePassword( string newPassword )
         {
             if(!safeLocked && !safeBlocked)
             {
                 safePassword = newPassword;
                 lastPasswordUpdate = DateTime.Now;
                 Console.WriteLine("Senhas alterada com sucesso!\n");
+                return true;
             }
             else Console.WriteLine("Abra o cofre para alterar a senha!\n");
+            return false;
         }
 
         public override void showDescription()

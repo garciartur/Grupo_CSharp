@@ -2,7 +2,7 @@
 
 namespace Exercicios_Modelagem
 {
-    class PowerDrill : HouseholdObjects
+    public class PowerDrill : HouseholdObjects
     {
         public int drillTool { get; set; }
         public string materialType { get; set; }
@@ -24,15 +24,15 @@ namespace Exercicios_Modelagem
                 case "chave phillips":
                 case "chave de fenda":
                 case "chave allen":
-                    this.drillTool = 0;
-                    Console.WriteLine("{0} ajustada!", drillTool);
-                    break;
-                case "broca":
                     this.drillTool = 1;
                     Console.WriteLine("{0} ajustada!", drillTool);
                     break;
-                case "lixa":
+                case "broca":
                     this.drillTool = 2;
+                    Console.WriteLine("{0} ajustada!", drillTool);
+                    break;
+                case "lixa":
+                    this.drillTool = 3;
                     Console.WriteLine("{0} ajustada!", drillTool);
                     break;
                 default:
@@ -41,7 +41,7 @@ namespace Exercicios_Modelagem
             }
         }
 
-        private double setMaterialType(string materialType)
+        public double setMaterialType(string materialType)
         {
             string material = materialType.ToLower();
             switch (material)
@@ -60,37 +60,64 @@ namespace Exercicios_Modelagem
             }
         }
 
-        public void toScrew(string materialType)
-        {
-            if (drillTool == 0)
-            {
-                double wattage = setMaterialType(materialType);
-                if (wattage > 0 && wattage <= drillWattage) Console.WriteLine("Parafusando...");
-                else Console.WriteLine("Potência insuficiente para parafusar {0}!", materialType);
-            }
-            else Console.WriteLine("Substitua o acessório para parafusar!");
-        }
-
-        public void toDrill(string materialType)
+        public bool toScrew(string materialType)
         {
             if (drillTool == 1)
             {
                 double wattage = setMaterialType(materialType);
-                if (wattage > 0 && wattage <= drillWattage) Console.WriteLine("Perfurando...");
-                else Console.WriteLine("Potência insuficiente para perfurar {0}!", materialType);
+                if (wattage > 0 && wattage <= drillWattage)
+                {
+                    Console.WriteLine("Parafusando...");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Potência insuficiente para parafusar {0}!", materialType);
+                    return false;
+                }
             }
-            else Console.WriteLine("Substitua o acessório para perfurar!");
+            else Console.WriteLine("Substitua o acessório para parafusar!");
+            return false;
         }
 
-        public void toSand(string materialType)
+        public bool toDrill(string materialType)
         {
             if (drillTool == 2)
             {
                 double wattage = setMaterialType(materialType);
-                if (wattage > 0 && wattage <= drillWattage) Console.WriteLine("Lixando...");
-                else Console.WriteLine("Potência insuficiente para lixar {0}!", materialType);
+                if (wattage > 0 && wattage <= drillWattage)
+                {
+                    Console.WriteLine("Perfurando...");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Potência insuficiente para perfurar {0}!", materialType);
+                    return false;
+                }
+            }
+            else Console.WriteLine("Substitua o acessório para perfurar!");
+            return false;
+        }
+
+        public bool toSand(string materialType)
+        {
+            if (drillTool == 3)
+            {
+                double wattage = setMaterialType(materialType);
+                if (wattage > 0 && wattage <= drillWattage)
+                {
+                    Console.WriteLine("Lixando...");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Potência insuficiente para lixar {0}!", materialType);
+                    return false;
+                }
             }
             else Console.WriteLine("Substitua o acessório para lixar!");
+            return false;
         }
 
         public override void showDescription()

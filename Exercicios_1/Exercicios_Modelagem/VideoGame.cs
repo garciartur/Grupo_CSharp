@@ -6,9 +6,9 @@ namespace Exercicios_Modelagem
     public class VideoGame : HouseholdObjects
     {
         private double consoleMemory { get; set; }
-        private double memoryRemaining { get; set; }
+        public double memoryRemaining { get; set; }
         private List<Game> gameList = new List<Game>();
-        private int gameQty { get; set; }
+        public int gameQty { get; private set; }
 
         public VideoGame(double consoleMemory)
         {
@@ -55,7 +55,7 @@ namespace Exercicios_Modelagem
             if( !gameOccurance ) Console.WriteLine("\n{0}não encontrado!", gameTitle);
         }
 
-        public void playGame(string gameTitle)
+        public bool playGame(string gameTitle)
         {
             bool gameOccurance = false;
             foreach (Game game in gameList)
@@ -64,9 +64,11 @@ namespace Exercicios_Modelagem
                 {
                     Console.WriteLine("\nAguarde! {0} está carregando...", gameTitle);
                     gameOccurance = true;
+                    return true;
                 }
             }
             if( !gameOccurance ) Console.WriteLine("\n{0} não encontrado!", gameTitle);
+            return false;
         }
 
         public void showGameList()
