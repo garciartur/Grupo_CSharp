@@ -1,0 +1,7 @@
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\obj\Debug\Challenge_FileExists.csprojAssemblyReference.cache
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\obj\Debug\Challenge_FileExists.csproj.CoreCompileInputs.cache
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\bin\Debug\Challenge_FileExists.exe.config
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\bin\Debug\Challenge_FileExists.exe
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\bin\Debug\Challenge_FileExists.pdb
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\obj\Debug\Challenge_FileExists.exe
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\Challenge_FileExists\Challenge_FileExists\obj\Debug\Challenge_FileExists.pdb
