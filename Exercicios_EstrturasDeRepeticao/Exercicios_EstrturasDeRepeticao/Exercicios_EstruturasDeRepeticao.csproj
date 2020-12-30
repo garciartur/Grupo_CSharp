@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayElement.cs" />
+    <Compile Include="LinqElement.cs" />
     <Compile Include="ListElement.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="Program.cs" />

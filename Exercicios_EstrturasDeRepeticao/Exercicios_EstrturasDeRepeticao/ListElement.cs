@@ -91,9 +91,5 @@ namespace Exercicios_EstrturasDeRepeticao
             }
             return sublist;
         }
-
-
-
-
     }
 }
