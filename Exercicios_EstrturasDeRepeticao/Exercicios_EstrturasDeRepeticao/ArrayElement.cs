@@ -137,10 +137,10 @@ namespace Exercicios_EstrturasDeRepeticao
                 if (CollectionNumbers[i] >= lowestNumber && CollectionNumbers[i] <= highestNumber)
                 {
                     elements++;
-                    if (elements == position) Console.WriteLine("O {0}º elemento entre 20 e 30: {1}", position, CollectionNumbers[i]);
+                    if (elements == position) Console.WriteLine("O {0}º elemento entre {1} e {2}: {3}", position, lowestNumber, highestNumber, CollectionNumbers[i]);
                 }
             }
-            if (elements < 4) Console.WriteLine("Não existe {0}º elemento na sequência, só existem {1} elementos entre 20 e 30", position, elements);
+            if (elements < 4) Console.WriteLine("Não existe {0}ª posição na sequência entre {1} e {2}, que só possui {3} elementos", position, lowestNumber, highestNumber, elements);
         }
 
         //9. Array de Element
