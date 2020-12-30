@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Exercicios_EstrturasDeRepeticao
 {
-    public class ListElement
+    public class ListElement : IElement
     {
         public List<int> CollectionNumbers = new List<int>();
+
         public ListElement(int[] collectionNumbers)
         {
             foreach(int number in collectionNumbers) CollectionNumbers.Add(number);
@@ -20,23 +21,27 @@ namespace Exercicios_EstrturasDeRepeticao
             return CollectionNumbers.Min();
         }
 
+        //2. Maior elemento
         public int HighestElement()
         {
             return CollectionNumbers.Max();
         }
 
-        public int Average()
+        //3. Média dos elementos
+        public double Average()
         {
             int sum = 0;
             foreach (int number in CollectionNumbers) sum += number;
             return sum / CollectionNumbers.Count;
         }
 
+        //4. Quarto elemento da sequência
         public int NthElement(int position)
         {
             return CollectionNumbers[position-1];
         }
 
+        //5. Menor elemento entre 20 e 300
         public int LowestInBetween(int numberA, int numberB)
         {
             List<int> range = new List<int> { numberA, numberB };
@@ -44,6 +49,7 @@ namespace Exercicios_EstrturasDeRepeticao
             return sublist.Min();
         }
 
+        //6. Maior elemento entre 20 e 300
         public int HighestInBetween(int numberA, int numberB)
         {
             List<int> range = new List<int> { numberA, numberB };
@@ -51,7 +57,8 @@ namespace Exercicios_EstrturasDeRepeticao
             return sublist.Max();
         }
 
-        public int AverageInBetween(int numberA, int numberB)
+        //7. Média dos elementos entre 20 e 300
+        public double AverageInBetween(int numberA, int numberB)
         {
             List<int> range = new List<int> { numberA, numberB };
             var sublist = Sublist(range);
@@ -60,6 +67,7 @@ namespace Exercicios_EstrturasDeRepeticao
             return sum / sublist.Count;
         }
 
+        //8. Quarto elemento entre 20 e 300
         public void NthInBetween(int position, int numberA, int numberB)
         {
             List<int> range = new List<int> { numberA, numberB };
@@ -68,6 +76,7 @@ namespace Exercicios_EstrturasDeRepeticao
             else Console.WriteLine("O {0}º elemento entre {1} e {2}: {3}", position, range.Min(), range.Max(), sublist[position-1]);
         }
 
+        //9. List de Element 
         public List<Element> ElementList()
         {
             List<Element> elementList = new List<Element>();
@@ -90,6 +99,16 @@ namespace Exercicios_EstrturasDeRepeticao
                 if (number >= range.Min() && number <= range.Max()) sublist.Add(number);
             }
             return sublist;
+        }
+
+        void IElement.NthElement(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        int IElement.NthInBetween(int position, int numberA, int numberB)
+        {
+            throw new NotImplementedException();
         }
     }
 }

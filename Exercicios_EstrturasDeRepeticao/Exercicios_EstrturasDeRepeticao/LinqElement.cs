@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercicios_EstrturasDeRepeticao
 {
-    public class LinqElement
+    public class LinqElement : IElement
     {
         public IEnumerable<int> CollectionNumbers { get; private set; }
 
@@ -154,6 +154,11 @@ namespace Exercicios_EstrturasDeRepeticao
             foreach (Element element in elementList) Console.WriteLine(element.Valor);
 
             return elementList;
+        }
+
+        int IElement.NthInBetween(int position, int numberA, int numberB)
+        {
+            throw new NotImplementedException();
         }
     }
 }

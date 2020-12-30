@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercicios_EstrturasDeRepeticao
 {
-    public class ArrayElement
+    public class ArrayElement : IElement
     {
         public int[] CollectionNumbers { get; private set; }
         public ArrayElement(int[] collectionNumbers)
@@ -106,7 +106,7 @@ namespace Exercicios_EstrturasDeRepeticao
         }
 
         //7. Média dos elementos entre 20 e 300
-        public int AverageInBetween(int numberA, int numberB)
+        public double AverageInBetween(int numberA, int numberB)
         {
             int highestNumber = HighestNumber(numberA, numberB);
             int lowestNumber = LowestNumber(numberA, numberB);
@@ -156,6 +156,16 @@ namespace Exercicios_EstrturasDeRepeticao
             }
             for (int i = 0; i < elementArray.Length; i++) Console.WriteLine(elementArray[i].Valor);
             return elementArray;
+        }
+
+        void IElement.NthElement(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        int IElement.NthInBetween(int position, int numberA, int numberB)
+        {
+            throw new NotImplementedException();
         }
     }
 }
