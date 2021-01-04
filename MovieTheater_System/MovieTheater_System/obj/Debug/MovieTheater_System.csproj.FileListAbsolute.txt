@@ -1,0 +1,7 @@
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\obj\Debug\MovieTheater_System.csprojAssemblyReference.cache
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\obj\Debug\MovieTheater_System.csproj.CoreCompileInputs.cache
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\bin\Debug\MovieTheater_System.exe.config
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\bin\Debug\MovieTheater_System.exe
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\bin\Debug\MovieTheater_System.pdb
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\obj\Debug\MovieTheater_System.exe
+C:\Users\tarep\Documents\Grupo_CSharp\Grupo_CSharp\MovieTheater_System\MovieTheater_System\obj\Debug\MovieTheater_System.pdb

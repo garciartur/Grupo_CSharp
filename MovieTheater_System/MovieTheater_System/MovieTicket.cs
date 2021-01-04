@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MovieTheater_System
 {
-    class Class1
+    public class MovieTicket
     {
+
     }
 }

@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovieTheater.cs" />
+    <Compile Include="Movie.cs" />
+    <Compile Include="MovieSession.cs" />
+    <Compile Include="MovieCollection.cs" />
+    <Compile Include="MovieTicket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,6 +10,10 @@ namespace MovieTheater_System
     {
         static void Main(string[] args)
         {
+            MovieCollection movieCollection = new MovieCollection();
+            movieCollection.AddMovie("O Clã das Adagas Voadoras");
+            movieCollection.RemoveMovie("Shrek");
+            Console.ReadLine();
         }
     }
 }
