@@ -8,17 +8,50 @@ namespace MovieTheater_System
 {
     public class MovieTheater
     {
-        public string Id { get; private set; }
-        public List<Movie> Playing { get; private set; }
-        public List<DateTime> Schedule { get; private set; }
-        public int Seats { get; private set; }
+        public List<Session> playing = new List<Session>();
+        public string theaterID { get; set; }
 
-        public MovieTheater(string id, int seats)
+        public MovieTheater(string id)
         {
-            Id = id;
-            Seats = seats;
+            theaterID = id;
         }
 
+        public void ScheduleMovie(string movie, DateTime schedule)
+        {
+            if (FreeSchedule(schedule))
+            {
+                var session = new Session(movie, schedule);
+                playing.Add(session);
+                Console.WriteLine(session.movie.Name + " was successfully scheduled!");
+            }
+            else Console.WriteLine("This schedule is not avaiable!");         
+        }
 
+        public void DescheduleMovie(DateTime schedule)
+        {
+            if (!FreeSchedule(schedule))
+            {
+                foreach (Session session in playing)
+                {
+                    if (session.schedule == schedule)
+                    {
+                        playing.Remove(session);
+                        Console.WriteLine(session.movie.Name + " was successfully descheduled!");
+                    }
+                }
+            }
+            else
+                    Console.WriteLine("This schedule was not found!");
+        }
+
+        public bool FreeSchedule(DateTime schedule)
+        {
+            foreach (Session session in playing)
+            {
+                if (session.schedule == schedule) 
+                    return false;
+            }         
+            return true;
+        }
     }
 }

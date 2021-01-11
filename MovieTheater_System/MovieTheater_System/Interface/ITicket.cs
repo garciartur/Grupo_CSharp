@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieTheater_System
+namespace MovieTheater_System.Interface
 {
-    public class MovieTicket
+    interface ITicket
     {
-
+        void CalculatePrice(DateTime schedule);
     }
 }

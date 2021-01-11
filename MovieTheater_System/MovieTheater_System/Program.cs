@@ -10,10 +10,11 @@ namespace MovieTheater_System
     {
         static void Main(string[] args)
         {
-            MovieCollection movieCollection = new MovieCollection();
-            movieCollection.AddMovie("O Clã das Adagas Voadoras");
-            movieCollection.RemoveMovie("Shrek");
+            var atendente = new BoxOffice("55221");
+            atendente.CreateMovieTheater("A");
+            atendente.
             Console.ReadLine();
+
         }
     }
 }
